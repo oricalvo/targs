@@ -1,0 +1,16 @@
+{
+	"name": "@oricalvo/targs",
+	"dependencies": {
+		"source-map-support": "^0.5.21",
+		"yargs": "^17.7.2"
+	},
+	"devDependencies": {
+		"@types/node": "^22.3.0",
+		"prettier": "^3.3.3",
+		"typescript": "^5.5.4"
+	},
+	"scripts": {
+		"build": "tsc -b tsconfig.json --pretty false",
+		"rebuild": "tsc -b tsconfig.json -f --pretty false"
+	}
+}
