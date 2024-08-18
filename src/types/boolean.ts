@@ -1,6 +1,6 @@
-import {CliArgReader} from "../reader";
-import {ValidationError} from "../errors";
-import {CliArgMetadata, CliArgType} from "../models";
+import { CliArgReader } from "../reader";
+import { ValidationError } from "../errors";
+import { CliArgMetadata, CliArgType } from "../models";
 
 export function CliArgBoolean(): boolean;
 export function CliArgBoolean(name: string): boolean;
@@ -54,15 +54,15 @@ export function CliArgBoolean(arg1?: string | boolean, arg2?: boolean): boolean 
 }
 
 export function parseBoolean(str: string): boolean {
-    if(str === "") {
+    if (str === "") {
         return true;
     }
 
-    if(str === "false") {
+    if (str === "false") {
         return false;
     }
 
-    if(str === "true") {
+    if (str === "true") {
         return true;
     }
 

@@ -4,7 +4,10 @@ export enum ErrorCode {
 }
 
 export class TArgsError extends Error {
-    constructor(public readonly message: string, public readonly errorCode: ErrorCode = ErrorCode.unexpected) {
+    constructor(
+        public readonly message: string,
+        public readonly errorCode: ErrorCode = ErrorCode.unexpected,
+    ) {
         super(message);
     }
 }

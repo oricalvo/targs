@@ -1,0 +1,6 @@
+{
+    "bail": 1,
+    "verbose": true,
+    "rootDir": "./dist",
+    "testMatch": ["**/*.test.js"]
+}

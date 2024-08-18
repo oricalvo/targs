@@ -1,7 +1,7 @@
-import {MissingCLIArgError, TArgsError, ValidationError} from "./errors";
+import { MissingCLIArgError, TArgsError, ValidationError } from "./errors";
 import { parseNumber, parseNumberArray } from "./types/number";
 import { parseBoolean } from "./types/boolean";
-import { parseDate } from "./types/date";
+import { parseISODate } from "./types/date";
 import { parseEnum } from "./types/enum";
 import { parseStringArray } from "./types/string";
 import { CliArg, CliArgMetadata, CliArgMode, CliArgType } from "./models";
@@ -10,7 +10,7 @@ export class CliArgReader {
     constructor(public argv: ParsedArgv) {}
 
     read<T>(name: string, parser: (str: string) => T, options: { defValue?: T }): T {
-        const option = (()=> {
+        const option = (() => {
             for (const arg of this.argv.options) {
                 if (arg.name == name) {
                     return arg;
@@ -32,9 +32,9 @@ export class CliArgReader {
     }
 
     readCmd() {
-        const {cmd} = this.argv;
+        const { cmd } = this.argv;
 
-        if(!cmd) {
+        if (!cmd) {
             throw new TArgsError("Missing CLI command");
         }
 
@@ -42,9 +42,9 @@ export class CliArgReader {
     }
 
     readCmdArgv() {
-        const {cmdArgv} = this.argv;
+        const { cmdArgv } = this.argv;
 
-        if(!cmdArgv) {
+        if (!cmdArgv) {
             throw new TArgsError("Missing CLI command's argv");
         }
 
@@ -64,7 +64,7 @@ export class CliArgReader {
     }
 
     readDate(name: string, options: { defValue?: Date } = {}): Date {
-        return this.read(name, parseDate, options);
+        return this.read(name, parseISODate, options);
     }
 
     readEnum<T>(name: string, enumType: object, options: { defValue?: T } = {}): T {

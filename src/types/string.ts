@@ -1,5 +1,5 @@
 import { CliArgReader } from "../reader";
-import {CliArgMetadata, CliArgType} from "../models";
+import { CliArgMetadata, CliArgType } from "../models";
 
 export function CliArgString(): string;
 export function CliArgString(name: string): string;
