@@ -1,6 +1,6 @@
 {
 	"name": "@oricalvo/targs",
-    "version": "1.0.1",
+    "version": "1.0.6",
 	"dependencies": {
 		"luxon": "3.5.0",
 		"source-map-support": "0.5.21",
@@ -15,11 +15,9 @@
 		"typescript": "5.5.4"
 	},
 	"scripts": {
-        "start": "jest --config=jest.config.json",
-		"build": "tsc -b tsconfig.json --pretty false",
-		"rebuild": "tsc -b tsconfig.json -f --pretty false"
 	},
     "files": [
-        "dist/**/*"
+        "dist/**/*",
+        "README.md"
     ]
 }

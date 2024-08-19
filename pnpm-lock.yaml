@@ -39,9 +39,9 @@ importers:
 
   client:
     dependencies:
-      '@oricalvo/targs-client':
+      '@oricalvo/targs':
         specifier: workspace:*
-        version: 'link:'
+        version: link:../lib
 
   lib:
     dependencies:
