@@ -1,0 +1,9 @@
+{
+	"name": "@oricalvo/targs-client",
+    "version": "1.0.1",
+	"dependencies": {
+        "@oricalvo/targs-client": "workspace:*"
+    },
+	"devDependencies": {
+	}
+}
