@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
-import { CliArgBoolean, parseBoolean } from "./boolean";
-import { readCliArgs } from "../reader";
-import { CliArgString } from "./string";
+import { CliArgBoolean, parseBoolean } from "./boolean.js";
+import { readCliArgs } from "../reader.js";
+import { CliArgString } from "./string.js";
 
 test("parseBoolean with true/false/empty", () => {
     expect(parseBoolean("true")).toEqual(true);

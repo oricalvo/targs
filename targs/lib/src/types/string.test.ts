@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { readCliArgs } from "../reader";
-import { CliArgString } from "./string";
+import { readCliArgs } from "../reader.js";
+import { CliArgString } from "./string.js";
 
 test("--name Ori", () => {
     const cli = readCliArgs(

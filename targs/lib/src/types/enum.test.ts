@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { readCliArgs } from "../reader";
-import { CliArgEnum, parseEnum } from "./enum";
+import { readCliArgs } from "../reader.js";
+import { CliArgEnum, parseEnum } from "./enum.js";
 
 test("parseEnum with string based enum", () => {
     enum Color {

@@ -1,6 +1,6 @@
-import { CliArgReader } from "../reader";
-import { ValidationError } from "../errors";
-import { CliArgMetadata, CliArgType } from "../models";
+import { CliArgReader } from "../reader.js";
+import { ValidationError } from "../errors.js";
+import { CliArgMetadata, CliArgType } from "../models.js";
 
 export function CliArgBoolean(): boolean;
 export function CliArgBoolean(name: string): boolean;
@@ -41,13 +41,13 @@ export function CliArgBoolean(arg1?: string | boolean, arg2?: boolean): boolean 
                     throw new ValidationError("Parameter " + this.name + " is missing");
                 }
 
-                return defValue;
+                return !defValue;
             }
 
             return reader.readBoolean(this.name, { defValue });
         },
-        name,
-        key: undefined,
+        name: <any>name,
+        key: <any>undefined,
     };
 
     return <any>metadata;

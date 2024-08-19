@@ -1,5 +1,5 @@
 {
-	"name": "@oricalvo/targs",
+	"name": "@oricalvo/root",
     "version": "1.0.1",
 	"dependencies": {
 		"luxon": "3.5.0",
@@ -17,7 +17,8 @@
 	"scripts": {
         "start": "jest --config=jest.config.json",
 		"build": "tsc -b tsconfig.json --pretty false",
-		"rebuild": "tsc -b tsconfig.json -f --pretty false"
+		"rebuild": "tsc -b tsconfig.json -f --pretty false",
+        "dev": "node build/dist/main.js"
 	},
     "files": [
         "dist/**/*"

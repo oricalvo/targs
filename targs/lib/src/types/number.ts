@@ -1,6 +1,6 @@
-import { CliArgReader } from "../reader";
-import { parseStringArray } from "./string";
-import { CliArgMetadata, CliArgType } from "../models";
+import { CliArgReader } from "../reader.js";
+import { parseStringArray } from "./string.js";
+import { CliArgMetadata, CliArgType } from "../models.js";
 
 export function CliArgNumber(): number;
 export function CliArgNumber(name: string): number;
@@ -11,8 +11,8 @@ export function CliArgNumber(name?: string, defValue?: number): number {
         handler: function (reader: CliArgReader, value: string) {
             return reader.readNumber(this.name, { defValue });
         },
-        name,
-        key: undefined,
+        name: <any>name,
+        key: <any>undefined,
     };
 
     return <any>metadata;
@@ -33,8 +33,8 @@ export function CliArgArrayNumber(name?: string, defValue?: number[]): number[] 
 
             return reader.readNumberArray(this.name, {});
         },
-        name,
-        key: undefined,
+        name: <any>name,
+        key: <any>undefined,
     };
 
     return <any>metadata;

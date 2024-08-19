@@ -1,0 +1,15 @@
+{
+    "name": "@oricalvo/common",
+    "version": "1.0.1",
+    "type": "module",
+    "dependencies": {
+        "@types/lodash": "^4.17.7",
+        "lodash": "^4.17.21",
+        "p-all": "^5.0.0",
+        "p-map": "^7.0.2",
+        "p-queue": "^8.0.1"
+    },
+    "scripts": {
+        "prepublishOnly": ""
+    }
+}

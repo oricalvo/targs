@@ -1,3 +1,6 @@
 packages:
-    - client
-    - lib
+    - common
+    - server-common
+    - targs/lib
+    - targs/client
+    - build

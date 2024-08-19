@@ -1,4 +1,4 @@
-import { CliArgReader } from "./reader";
+import { CliArgReader } from "./reader.js";
 
 export enum CliArgType {
     Number = 1,

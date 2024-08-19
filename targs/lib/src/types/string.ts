@@ -1,5 +1,5 @@
-import { CliArgReader } from "../reader";
-import { CliArgMetadata, CliArgType } from "../models";
+import { CliArgReader } from "../reader.js";
+import { CliArgMetadata, CliArgType } from "../models.js";
 
 export function CliArgString(): string;
 export function CliArgString(name: string): string;
@@ -10,8 +10,8 @@ export function CliArgString(name?: string, defValue?: string): string {
         handler: function (reader: CliArgReader) {
             return reader.readString(this.name, { defValue });
         },
-        name,
-        key: undefined,
+        name: <any>name,
+        key: <any>undefined,
     };
 
     return <any>metadata;
@@ -37,8 +37,8 @@ export function CliArgArrayString(name?: string, defValue?: string[], separator:
 
             return reader.readStringArray(this.name, options);
         },
-        name,
-        key: undefined,
+        name: <any>name,
+        key: <any>undefined,
     };
 
     return <any>metadata;

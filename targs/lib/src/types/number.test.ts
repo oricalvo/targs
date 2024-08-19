@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { readCliArgs } from "../reader";
-import { CliArgArrayNumber, parseNumber, parseNumberArray } from "./number";
+import { readCliArgs } from "../reader.js";
+import { CliArgArrayNumber, parseNumber, parseNumberArray } from "./number.js";
 
 test("parseNumber with simple number", () => {
     expect(parseNumber("123")).toEqual(123);

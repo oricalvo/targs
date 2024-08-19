@@ -1,17 +1,23 @@
-import { MissingCLIArgError, TArgsError, ValidationError } from "./errors";
-import { parseNumber, parseNumberArray } from "./types/number";
-import { parseBoolean } from "./types/boolean";
-import { parseISODate } from "./types/date";
-import { parseEnum } from "./types/enum";
-import { parseStringArray } from "./types/string";
-import { CliArg, CliArgMetadata, CliArgMode, CliArgType } from "./models";
+import { MissingCLIArgError, TArgsError, ValidationError } from "./errors.js";
+import { parseNumber, parseNumberArray } from "./types/number.js";
+import { parseBoolean } from "./types/boolean.js";
+import { parseISODate } from "./types/date.js";
+import { parseEnum } from "./types/enum.js";
+import { parseStringArray } from "./types/string.js";
+import { CliArg, CliArgMetadata, CliArgMode, CliArgType } from "./models.js";
 
 export class CliArgReader {
     constructor(public argv: ParsedArgv) {}
 
     read<T>(name: string, parser: (str: string) => T, options: { defValue?: T }): T {
         const option = (() => {
-            for (const arg of this.argv.options) {
+            const {options} = this.argv;
+
+            if(!options) {
+                return null;
+            }
+
+            for (const arg of options) {
                 if (arg.name == name) {
                     return arg;
                 }
@@ -166,7 +172,7 @@ export function readCliArgs<T>(argsMetadataT: T, argv?: string[]): T {
             continue;
         }
 
-        const actualArg = actualArgs.find(a => a.name == argDef.name);
+        const actualArg = actualArgs?.find(a => a.name == argDef.name);
         res[argDef.key] = argDef.handler(reader, actualArg?.value);
     }
 
@@ -220,10 +226,10 @@ export function parseCliArgs(argv: string[], options: ParseCliArgsOptions): Pars
                 throw new Error("Unexpected option: " + argName);
             }
 
-            res.options.push({
+            res.options!.push({
                 name: argName,
                 value: argValue,
-                metadata: null,
+                metadata: <any>null,
             });
 
             continue;

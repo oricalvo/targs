@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es2020",
+        "module": "NodeNext",
+        "target": "esnext",
+        "moduleResolution": "NodeNext",
         "sourceMap": true,
-        "resolveJsonModule": true,
         "esModuleInterop": true,
         "declaration": true,
         "declarationMap": true,
@@ -11,8 +11,9 @@
         "forceConsistentCasingInFileNames": true,
         "experimentalDecorators": true,
         "noImplicitThis": true,
-        "strictBindCallApply": true,
-        "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
+        "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo",
+        "strict": true,
+        "assumeChangesOnlyAffectDirectDependencies": true
     },
     "include": [
     ],

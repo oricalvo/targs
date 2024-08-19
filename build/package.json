@@ -1,0 +1,11 @@
+{
+	"name": "@oricalvo/targs-build",
+	"version": "1.0.1",
+    "type": "module",
+    "dependencies": {
+        "@oricalvo/targs": "workspace:*"
+	},
+    "scripts": {
+        "prepublishOnly": ""
+    }
+}

@@ -1,11 +1,11 @@
-import { CliArgMetadata, CliArgType } from "../models";
-import { CliArgReader } from "../reader";
+import { CliArgMetadata, CliArgType } from "../models.js";
+import { CliArgReader } from "../reader.js";
 
 export function CliArgCmd(): string {
     const metadata: CliArgMetadata = {
         type: CliArgType.Cmd,
-        name: undefined,
-        key: undefined,
+        name: <any>undefined,
+        key: <any>undefined,
         handler: (reader: CliArgReader, value: any): string => {
             return value;
         },
@@ -17,8 +17,8 @@ export function CliArgCmd(): string {
 export function CliArgCmdArgv(required: boolean = false): string[] {
     const metadata: CliArgMetadata = {
         type: CliArgType.CmdArgv,
-        name: undefined,
-        key: undefined,
+        name: <any>undefined,
+        key: <any>undefined,
         handler: (reader: CliArgReader, value: any): string => {
             return value;
         },

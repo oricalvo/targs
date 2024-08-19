@@ -1,5 +1,5 @@
-import { CliArgReader } from "../reader";
-import { CliArgMetadata, CliArgType } from "../models";
+import { CliArgReader } from "../reader.js";
+import { CliArgMetadata, CliArgType } from "../models.js";
 
 export function CliArgEnum<T>(enumType: object): T;
 export function CliArgEnum<T>(name: string, enumType: object): T;
@@ -43,15 +43,15 @@ export function CliArgEnum<T>(arg1: object | string, arg2?: object | T, arg3?: T
         handler: function (reader: CliArgReader) {
             return reader.readEnum(this.name, <object>enumType, { defValue });
         },
-        name,
-        key: undefined,
+        name: <any>name,
+        key: <any>undefined,
     };
 
     return <any>metadata;
 }
 
 export function parseEnum<T, K extends keyof T>(enumType: T, str: string): T[K] {
-    const val = enumType[str];
+    const val = enumType[<K>str];
     if (val === undefined) {
         throw new Error("Invalid enum string: " + str);
     }

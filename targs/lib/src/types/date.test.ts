@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
-import { readCliArgs } from "../reader";
-import { CliArgDate, parseISODate } from "./date";
+import { readCliArgs } from "../reader.js";
+import { CliArgDate, parseISODate } from "./date.js";
 
 test("parseISODate with ISO format", () => {
     expect(parseISODate("2024-01-01")).toEqual(new Date(Date.UTC(2024, 0, 1)));

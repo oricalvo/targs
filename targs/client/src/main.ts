@@ -1,5 +1,5 @@
-import { readCliArgs } from "@oricalvo/targs/dist/reader";
-import { CliArgString } from "@oricalvo/targs/dist/types/string";
+import { readCliArgs } from "@oricalvo/targs/dist/reader.js";
+import { CliArgString } from "@oricalvo/targs/dist/types/string.js";
 
 function main() {
     const cli = readCliArgs({
